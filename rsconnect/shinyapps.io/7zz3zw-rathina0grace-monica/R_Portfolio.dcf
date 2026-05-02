@@ -1,0 +1,13 @@
+name: R_Portfolio
+title: R_Portfolio
+username: 7zz3zw-rathina0grace-monica
+account: 7zz3zw-rathina0grace-monica
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17254542
+bundleId: 11922482
+url: https://7zz3zw-rathina0grace-monica.shinyapps.io/R_Portfolio/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: demo_audio.wav|input.csv|input.xlsx|interview_recording.flac|L3_DLRP_MNIST_CNN_Python.ipynb|L4_DLRP_Data_Cleaning.R|L5_Speech_Recognition.html|L5_Speech_Recognition.R|L5_Speech_Recognition_stud.R|L6_DLRP_Lab.R|L6_DLRP_Statistics.R|L7_ DLRP_CNN_Prog.R|L8_DLRP_Lab_MTcars.R|L8_DLRP_Linear Regression Laboratory.R|Logistic_Regression_Default.R|logs/run_1/train/events.out.tfevents.1776251734.LAVANYA.34388.0.v2|logs/run_1/train/events.out.tfevents.1776252035.LAVANYA.34388.1.v2|logs/run_1/train/events.out.tfevents.1776654147.LAVANYA.28020.0.v2|logs/run_1/validation/events.out.tfevents.1776252041.LAVANYA.34388.2.v2|logs/run_1/validation/events.out.tfevents.1776654153.LAVANYA.28020.1.v2|MNIST_digits_keras3.R|output.csv|people2.csv|speechtotext-r-project-28f9a0465652.json|transcripts.csv|x.Rdata

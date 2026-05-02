@@ -1,6 +1,7 @@
 # =====================================================
 # LESSON 3: LOGISTIC REGRESSION DEMONSTRATION
 # Goal: Predict customer default based on balance/income
+# Author: Rathina Grace Monica / Adjunct Lecturer
 # =====================================================
 
 # 1. Install and Load the ISLR library 

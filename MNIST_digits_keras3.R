@@ -69,3 +69,54 @@ results <- model %>% evaluate(x_test, y_test)
 cat("\n--- FINAL EVALUATION RESULTS ---\n")
 cat("Test Loss: ", results[["loss"]], "\n")
 cat("Test Accuracy: ", round(results[["accuracy"]] * 100, 2), "%\n")
+
+
+# --- EXPERIMENT 2: TWO HIDDEN LAYERS (Slide 22) ---
+# We are increasing complexity to see if accuracy improves
+
+model_2 <- keras_model_sequential() %>%
+  layer_dense(units = 1024, activation = 'relu', input_shape = c(784)) %>%
+  layer_dense(units = 1024, activation = 'relu') %>% # Second Hidden Layer
+  layer_dense(units = 10, activation = 'softmax')
+
+model_2 %>% compile(
+  loss = 'categorical_crossentropy',
+  optimizer = 'rmsprop',
+  metrics = c('accuracy')
+)
+
+cat("\n--- TRAINING EXPERIMENT 2 (Deep Network) ---\n")
+history_2 <- model_2 %>% fit(
+  x_train, y_train, 
+  epochs = 5, 
+  batch_size = 128,
+  validation_split = 0.2
+)
+
+# Evaluation for Experiment 2
+results_2 <- model_2 %>% evaluate(x_test, y_test)
+train_acc_2 <- tail(history_2$metrics$accuracy, 1)
+
+cat("\n--- EXPERIMENT 2 RESULTS ---\n")
+cat("Training Accuracy: ", round(train_acc_2 * 100, 2), "%\n")
+cat("Test Accuracy:     ", round(results_2[["accuracy"]] * 100, 2), "%\n")
+
+# ---  Train with Visualization (TensorBoard) ---
+cat("\n--- STARTING TRAINING WITH TENSORBOARD ---\n")
+
+# 1. Define log location
+log_path <- "logs/run_1"
+
+# 2. Add the callback to the fit function
+history <- model %>% fit(
+  x_train, y_train, 
+  epochs = 5, 
+  batch_size = 128,
+  validation_split = 0.2,
+  callbacks = list(
+    callback_tensorboard(log_dir = log_path)
+  )
+)
+
+# 3. Launch the Dashboard 
+tensorboard(log_path)

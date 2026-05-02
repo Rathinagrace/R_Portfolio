@@ -1,6 +1,7 @@
 #-----------------------------------------------------------
 # title: "SG Smart Transport AI: Deep Learning Module"
-# author: "Lead Educator"
+# author: Rathina Grace Monica
+# Designation: Adjunct Lecturer
 # output: html_document
 # runtime: shiny
 #-----------------------------------------------------------
@@ -437,30 +438,66 @@ ui <- navbarPage(
   title = "Rathina Grace Monica | Professional Portfolio",
   
   # 4.6 SPLASH PAGE
-  tabPanel("Home",
+  # --- TAB 3: INTERACTIVE RESUME ---
+  tabPanel("Project Lead Profile",
            fluidPage(
-             div(style = "text-align: center; padding: 50px 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 15px;",
-                 img(src = "https://www.lta.gov.sg/content/dam/ltagov/logo/lta_logo.png", height = "80px", style="margin-bottom: 20px;"),
-                 h1("Rathina Grace Monica", style = "font-weight: 800; color: #2c3e50;"),
-                 h3("Adjunct Lecturer | Senior Engineer", style = "color: #34495e;"),
-                 hr(style = "width: 50%; border-top: 2px solid #3498db;"),
-                 p("Specializing in Smart Urban Solutions, Deep Learning, and Adult Education.", style = "font-size: 1.2em;"),
-                 br(),
+             sidebarLayout(
+               sidebarPanel(
+                 wellPanel(
+                   h2("Rathina Grace Monica"),
+                   h4(tags$i("Adjunct Lecturer & Data Scientist")),
+                   hr(),
+                   h5(strong("Academic Credentials:")),
+                   tags$ul(
+                     tags$li(strong("Master of Engineering"), " - First Class Distinction"),
+                     tags$li(strong("Bachelor of Engineering"), " - First Class Distinction"),
+                     tags$li(strong("WSQ ACLP 2.0 Certified"), " - Adult Educator")
+                   ),
+                   h5(strong("Professional Certifications:")),
+                   tags$ul(
+                     tags$li("Data Science & Machine Learning (MIT)"),
+                     tags$li("Analytics: Data to Insights (NUS)")
+                   )
+                 ),
+                 h4("Technical Skills"),
                  div(
-                   span(class="label label-primary", style="font-size: 15px; margin: 5px;", "Deep Learning"),
-                   span(class="label label-success", style="font-size: 15px; margin: 5px;", "R Shiny"),
-                   span(class="label label-info", style="font-size: 15px; margin: 5px;", "Predictive Modeling"),
-                   span(class="label label-warning", style="font-size: 15px; margin: 5px;", "LTA Data Analytics")
+                   span(class="label label-primary", "Deep Learning (H2O/Keras)"),
+                   span(class="label label-info", "R / Shiny Programming"),
+                   span(class="label label-success", "Python (Pandas/NumPy)"),
+                   span(class="label label-warning", "Computer Vision (CNN)"),
+                   span(class="label label-danger", "Big Data (Hadoop/PySpark)")
                  )
-             ),
-             br(),
-             fluidRow(
-               column(4, wellPanel(icon("brain", lib = "font-awesome"), h4("AI Expertise"), "Developing CNN and DNN architectures for transport.")),
-               column(4, wellPanel(icon("graduation-cap", lib = "font-awesome"), h4("Educator"), "Certified ACLP 2.0 trainer for future-ready skills.")),
-               column(4, wellPanel(icon("database", lib = "font-awesome"), h4("Data Driven"), "Translating LTA DataMall into actionable insights."))
+               ),
+               mainPanel(
+                 h3("Project Spotlight: SG Smart Transport AI"),
+                 p("This project serves as a cornerstone for urban predictive analytics, utilizing the LTA DataMall ecosystem to solve the 'Last Mile' connectivity challenge through advanced R programming."),
+                 
+                 wellPanel(
+                   h4(strong("Deep Dive into the AI Engine")),
+                   tags$ul(
+                     tags$li(strong("Data Synthesis:"), "Engineered a robust pipeline to process real-time mobility feeds, implementing rigorous EDA to handle missing values and ensure dataset integrity."),
+                     tags$li(strong("Deep Learning Architecture:"), "Deployed a Deep Neural Network (DNN) using the H2O framework, featuring multi-layer configurations optimized for non-linear demand forecasting."),
+                     tags$li(strong("Computer Vision:"), "Developed a Convolutional Neural Network (CNN) architecture for real-time vehicle recognition from traffic camera feeds."),
+                     tags$li(strong("Real-time Deployment:"), "The interface is built on R Shiny, enabling stakeholders to interact with live AI inference results via a secure dashboard.")
+                   )
+                 ),
+                 
+                 h4("Specialized Modules Handled"),
+                 wellPanel(
+                   tags$ul(
+                     tags$li(strong("Deep Learning with R Programming:"), "Teaching the implementation of Neural Networks (DNN/CNN) and model optimization using H2O and Keras."),
+                     tags$li(strong("Python for Data Science:"), "End-to-end training including data cleaning, feature engineering, and predictive modeling."),
+                     tags$li(strong("Big Data Analytics:"), "Instruction on Hadoop and PySpark workflows for large-scale data transformation."),
+                     tags$li(strong("Mobile App Development:"), "Full-cycle Android development (Java/Android Studio) for business solutions.")
+                   )
+                 ),
+                 
+                 h4("Professional Experience"),
+                 p(strong("Adjunct Lecturer | AI Solutions Developer"), br(),
+                   "Specializing in the intersection of Adult Education and AI implementation. Focused on translating complex machine learning concepts into actionable urban solutions for the Singapore context.")
+               )
              )
-           )
-  ),
+           )),
   
   # 4.2 PROJECT SHOWCASE (Dynamic Tabs)
   navbarMenu("Projects",

@@ -1,6 +1,6 @@
 # =====================================================
 
-# LESSON 6: Statistics slide excercise
+# LESSON 6: Statistics slide exercise
 # Author: Rathina Grace Monica / Adjunct Lecturer
 
 # =====================================================

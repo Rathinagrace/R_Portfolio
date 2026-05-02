@@ -18,7 +18,7 @@ library(googleLanguageR)
 library(googleLanguageR)
 
 # Set credentials (
-Sys.setenv(GOOGLE_APPLICATION_CREDENTIALS = "C:/Users/rathi/R_Portfolio/speechtotext-r-project-28f9a0465652.json")
+Sys.setenv(GOOGLE_APPLICATION_CREDENTIALS = "-----------------")
 gl_auth(json_file = Sys.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
 
 # 2. THE CLEAN DEMO 
@@ -42,40 +42,27 @@ if(file.exists(target_file)) {
 
 
 # Experiment 2 Flexible R Function
-library(googleLanguageR)
-
-# --- 1. FUNCTION DEFINITION ---
-# We must define the "recipe" before we can cook!
-transcribe_flexible <- function(audio_source, sample_rate = 16000) {
-  # This calls the actual Google API function
-  gl_speech(
-    audio_source,
-    sampleRateHertz = sample_rate,
-    languageCode = "en-US"
-  )
-}
-
-# --- 2. EXECUTION ---
+# 1. EXECUTION 
 target_file <- "demo_audio.wav"
 
-# Now R knows what 'transcribe_flexible' is!
+# Call the function (using the function you already defined)
 experiment_results <- transcribe_flexible(
   audio_source = target_file,
   sample_rate = 16000
 )
 
-# --- 3. CLEAN DISPLAY RESULTS ---
+# 2. CLEAN DISPLAY RESULTS 
 cat("\n--- EXPERIMENT 2 RESULTS ---\n")
 
 # Extract values safely
 transcript_text <- experiment_results$transcript$transcript[1]
-# Use as.numeric to ensure it's a number for calculations
+# We use as.numeric to fix the 'binary operator' error
 confidence_val <- as.numeric(experiment_results$transcript$confidence[1])
 
 if(!is.na(transcript_text)) {
   cat("TRANSCRIPT:\n", transcript_text, "\n")
   
-  # Only print confidence if it's a valid number
+# Only print confidence if it's a valid number
   if(!is.na(confidence_val)) {
     cat("\nCONFIDENCE SCORE:", round(confidence_val * 100, 2), "%\n")
   }
@@ -131,10 +118,6 @@ if(file.exists(target_file_3)) {
 
 # EXPERIMENT 4: PRACTICAL ANALYTICAL WORKFLOWS 
 
-# 1. RE-AUTHENTICATION 
-# Set credentials (
-Sys.setenv(GOOGLE_APPLICATION_CREDENTIALS = "C:/Users/rathi/R_Portfolio/speechtotext-r-project-28f9a0465652.json")
-gl_auth(json_file = Sys.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
 
 
 # 2. BATCH PROCESSING FUNCTION 
